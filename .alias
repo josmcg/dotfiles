@@ -1,0 +1,13 @@
+alias  exif='exiftool'
+
+alias whoami-git='ssh -T git@github.com'
+
+alias gs='git status'
+
+alias gc='git commit'
+
+alias find_in='grep -rnw . -e'
+
+alias nl='sed -n "$="'
+
+alias git_search='git log -S'
