@@ -15,7 +15,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 call vundle#end()
-filetype plugin indent on
+filetype plugin indent off
+filetype plugin on
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -34,11 +35,14 @@ let g:syntastic_mode_map = {
 			\"mode": "passive",
 			\"active_filetypes":["python"],
 			\"passive_filetypes":[]}
-let mapleader = ' '
-map <C-n> :NERDTreeToggle<CR>
-map <C-t> :tabn<CR>
-map <C-o> :tabedit
+"start nerdtree if no file was specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeShowHidden=1 "show dotfiles by default
+let mapleader = ' '
+nmap <leader>f :NERDTree<CR>
+nmap <leader>n :tabn<CR>
+nmap <leader>t :tabedit
 nmap <leader><space> i<space><esc>
-nmap <leader><CR> i<CR><esc>
+nmap <leader><CR> o<esc>
+nmap <leader>c :tabclose<CR>
