@@ -26,9 +26,6 @@ build_prompt () {
 	local git_color="\[\e[0;35m\]"
 	local git_prompt="${git_color}\$(git_prompt_text)${reset_color}"
 
-	local vim_color="\[\e[4;33m\]"
-	local vim_prompt="${vim_color}\$(vim_prompt_text)${reset_color}"
-
 	local prompt_color="\[\e[\$(prompt_char_color)m\]"
 	local prompt_prompt="${prompt_color}\$(prompt_char_text)${reset_color}"
 

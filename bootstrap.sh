@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #
 # From https://github.com/mathiasbynens/dotfiles/blob/master/bootstrap.sh

@@ -1,3 +1,4 @@
+colorscheme brogrammer
 set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax on "turn on syntax for all files, decreases performance
@@ -6,18 +7,22 @@ set rtp+=~/.vim/bundle/Vundle.vim
 inoremap <BS> <Left><Del>
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 filetype plugin indent on
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set laststatus=2
 set number
 imap cs :call SyntasticCheck()
+let g:airline#extensions#tabline#enabled = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -29,8 +34,11 @@ let g:syntastic_mode_map = {
 			\"mode": "passive",
 			\"active_filetypes":["python"],
 			\"passive_filetypes":[]}
+let mapleader = ' '
 map <C-n> :NERDTreeToggle<CR>
-map <C-t> :tabn <CR>
+map <C-t> :tabn<CR>
+map <C-o> :tabedit
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-nnoremap <space> i<space><esc>
+nmap <leader><space> i<space><esc>
+nmap <leader><CR> i<CR><esc>
