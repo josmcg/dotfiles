@@ -14,16 +14,15 @@ Plugin 'xolox/vim-notes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'reedes/vim-pencil'
 call vundle#end()
-filetype plugin indent off
-filetype plugin on
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+filetype plugin indent on
 set laststatus=2
 set number
-imap cs :call SyntasticCheck()
-let g:airline#extensions#tabline#enabled = 1
+set cursorline
+set undofile
+set undodir=~/.vim/undo
+set undolevels=5
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -39,10 +38,33 @@ let g:syntastic_mode_map = {
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1 "show dotfiles by default
+"airline settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_extensions = [] 
+function! AirlineInit(...)
+	let w:airline_section_b = '%f'
+	let w:airline_section_c = 'Focus'
+	let g:airline_section_d = '%{PencilMode()}'
+endfunction
+call airline#add_statusline_func('AirlineInit')
+let g:pencil#autoformat = 1 
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
 let mapleader = ' '
-nmap <leader>f :NERDTree<CR>
+nmap <leader>f <C-w>w
 nmap <leader>n :tabn<CR>
 nmap <leader>t :tabedit
 nmap <leader><space> i<space><esc>
 nmap <leader><CR> o<esc>
 nmap <leader>c :tabclose<CR>
+nmap <leader>p :set paste!<CR>
+nmap <leader>q :wqa<CR>
+nmap <leader>sc :call SyntasticCheck()
+nmap <leader>/ :!.proj.sh<CR>
+nmap <leader>s :w<CR>
+"remaps
+nnoremap <tab> %
