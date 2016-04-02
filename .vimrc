@@ -15,6 +15,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'reedes/vim-pencil'
+Plugin 'file:///Users/joshmcgrath/.vim/proselint'
 call vundle#end()
 filetype plugin indent on
 set laststatus=2
@@ -30,9 +31,10 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_html_tidy_exec = '/usr/local/Cellar/tidy-html5/5.1.25'
 let g:syntastic_php_checkers = ['phpcs']
 let g:syntastic_js_checkers = ['jshint']
+let g:syntastic_md_checkers = ['proselint']
 let g:syntastic_mode_map = {
 			\"mode": "passive",
-			\"active_filetypes":["python"],
+			\"active_filetypes":["python","markdown"],
 			\"passive_filetypes":[]}
 "start nerdtree if no file was specified
 autocmd StdinReadPre * let s:std_in=1
