@@ -16,14 +16,14 @@ function doIt() {
 	      --exclude "mailmate-keybindings/" \
 	      -a -v -u . ~
 
-	# Install Vundle, because its self-updates don't work if managed in
+	# Install Plug, because its self-updates don't work if managed in
 	# another git repo
-	if [ ! -e ~/.vim/bundle/Vundle.vim ]; then
-		git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	if [ ! -e ~/.vim/autoload/plug.vim ]; then
+		git clone https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim ~/.vim/\autoload/plug.vim
 	fi
 
-	# Tell vim's Vundle to install all of the things
-	vim +BundleInstall +qall
+	# Tell vim's Plug to install all of the things
+	vim +PlugInstall +qall
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

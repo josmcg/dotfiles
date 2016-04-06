@@ -9,8 +9,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH:~/pear:~/bin
 export EDITOR=vim
 export VISUAL=vim
 export HISTTIMEFORMAT="%F %T "
-
-
+export TERM=xterm-256color
 build_prompt () {
 	local reset_color="\[\e[0;0m\]"
 
