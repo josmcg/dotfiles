@@ -93,3 +93,5 @@ nmap <leader>/ :!.proj.sh<CR>
 nmap <leader>s :w<CR>
 "remaps
 nnoremap <tab> %
+"useful commans
+command PrettyJSON %!python -m json.tool
