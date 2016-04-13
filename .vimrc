@@ -1,10 +1,8 @@
 colorscheme brogrammer
-"set t_Co=256
 set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax on "turn on syntax for all files, decreases performance
 set smartcase
-set rtp+=~/.vim/bundle/Vundle.vim
 inoremap <BS> <Left><Del>
 call plug#begin('~/.vim/plugged')
 Plug 'gmarik/Vundle.vim'
@@ -16,6 +14,17 @@ Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug '~/.vim/proselint', {'for' : 'markdown'}
 call plug#end()
+augroup default
+	autocmd!
+	autocmd VimEnter * call DetectSession()
+	autocmd VimLeave * :mks! .sesh.vim
+augroup END
+function DetectSession()
+	if !empty(glob("sesh.vim")) && argc() == 0
+		 so .sesh.vim
+	endif
+endfunction
+
 filetype plugin indent on
 set laststatus=2
 set number
@@ -36,9 +45,6 @@ let g:syntastic_mode_map = {
 			\"mode": "passive",
 			\"active_filetypes":["python","markdown"],
 			\"passive_filetypes":[]}
-"start nerdtree if no file was specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1 "show dotfiles by default
 "airline settings
 let g:git_branch = substitute(system('git symbolic-ref HEAD --short'),"^@", "","")
@@ -89,9 +95,8 @@ nmap <leader>c :tabclose<CR>
 nmap <leader>p :set paste!<CR>
 nmap <leader>q :wqa<CR>
 nmap <leader>sc :call SyntasticCheck()
-nmap <leader>/ :!.proj.sh<CR>
 nmap <leader>s :w<CR>
 "remaps
 nnoremap <tab> %
-"useful commans
+"useful commands
 command PrettyJSON %!python -m json.tool
