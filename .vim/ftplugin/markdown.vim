@@ -27,10 +27,12 @@ function! MarkdownCompile()
 endfunction
 
 function! InsertDefaultYAML()
-	if !empty(glob("~/.vim/templates/pandoc.yaml"))
-		execute "r ~/.vim/templates/pandoc.yaml"	
-	else
-		echom("no default yaml file, consider making one and putting it at ~/.vim/templates/pandoc.yaml")
+	if empty(glob(expand("%")))
+		if !empty(glob("~/.vim/templates/pandoc.yaml"))
+			execute "r ~/.vim/templates/pandoc.yaml"	
+		else
+			echom("no default yaml file, consider making one and putting it at ~/.vim/templates/pandoc.yaml")
+		endif
 	endif
 endfunction
 

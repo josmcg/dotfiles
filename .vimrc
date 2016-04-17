@@ -5,10 +5,8 @@ syntax on "turn on syntax for all files, decreases performance
 set smartcase
 inoremap <BS> <Left><Del>
 call plug#begin('~/.vim/plugged')
-Plug 'gmarik/Vundle.vim'
 Plug 'scrooloose/syntastic'
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
@@ -17,11 +15,11 @@ call plug#end()
 augroup default
 	autocmd!
 	autocmd VimEnter * call DetectSession()
-	autocmd VimLeave * :mks! .sesh.vim
+	autocmd VimLeave * :mks! sesh.vim
 augroup END
 function DetectSession()
 	if !empty(glob("sesh.vim")) && argc() == 0
-		 so .sesh.vim
+		 so sesh.vim
 	endif
 endfunction
 
