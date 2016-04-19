@@ -11,7 +11,7 @@ augroup END
 function! MarkdownCompile()
 	"compile markdown to pdf with pandoc by default
 	"check if a .sty file exists
-	if !empty(glob(expand("%:r.sty")))
+	if !empty(glob(expand("%:r").".sty"))
 		:!pandoc -H %:r.sty % -s -o %:r.pdf
 		return 1
 	endif
