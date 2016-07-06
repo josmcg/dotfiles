@@ -11,3 +11,7 @@ alias find_in='grep -rnw . -e'
 alias nl='sed -n "$="'
 
 alias git_search='git log -S'
+
+alias wget_dir='wget -r -nH -nd -np -R index.html* '
+
+alias findp='ps -e | grep '

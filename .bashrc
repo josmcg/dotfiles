@@ -1,11 +1,8 @@
 #!/bin/bash
-
 if [ -f /etc/bash_completion ]; then
 	source /etc/bash_completion
 fi
-
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:~/pear:~/bin
-
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:~/pear:~/bin:/Users/joshmcgrath/Library/Android/sdk/platform-tools
 export EDITOR=vim
 export VISUAL=vim
 export HISTTIMEFORMAT="%F %T "
@@ -27,9 +24,9 @@ build_prompt () {
 
 	local prompt_color="\[\e[\$(prompt_char_color)m\]"
 	local prompt_prompt="${prompt_color}\$(prompt_char_text)${reset_color}"
-
-	echo "${user_prompt}${at_prompt}${dir_prompt}${git_prompt}\$(vim_prompt_padding)${vim_prompt}${prompt_prompt} "
+	echo "${user_prompt}${at_prompt}${dir_prompt}${git_prompt}\$(vim_prompt_padding)${prompt_prompt} "
 }
+
 
 prompt_char_color () {
 	if [ "$USER" == "root" ]; then
@@ -46,6 +43,15 @@ prompt_char_text () {
 		echo ">"
 	fi
 }
+prompt_mode_text(){
+	local mode=$(bind -v |  awk '/keymap/ {print $NF}')
+	if [ "$mode" == "vi-insert" ]; then
+		echo "(i)"
+	else
+		echo "(n)"
+	fi
+}
+
 
 dir_prompt_text () {
 	echo " \W "

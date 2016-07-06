@@ -3,6 +3,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax on "turn on syntax for all files, decreases performance
 set smartcase
+"I can't do tons of indentationn
+set tabstop=1
 inoremap <BS> <Left><Del>
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
@@ -41,7 +43,7 @@ let g:syntastic_js_checkers = ['jshint']
 let g:syntastic_markdown_checkers = ['proselint']
 let g:syntastic_mode_map = {
 			\"mode": "passive",
-			\"active_filetypes":["python","markdown"],
+			\"active_filetypes":["python","markdown","javacript"],
 			\"passive_filetypes":[]}
 let NERDTreeShowHidden=1 "show dotfiles by default
 "airline settings
@@ -94,6 +96,8 @@ nmap <leader>p :set paste!<CR>
 nmap <leader>q :wqa<CR>
 nmap <leader>sc :call SyntasticCheck()
 nmap <leader>s :w<CR>
+nmap <leader>, :bprev<CR>
+nmap <leader>. :bnext<CR>
 "remaps
 nnoremap <tab> %
 "useful commands
