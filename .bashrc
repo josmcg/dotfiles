@@ -1,12 +1,12 @@
 #!/bin/bash
-if [ -f /etc/bash_completion ]; then
-	source /etc/bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
 fi
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:~/pear:~/bin:/Users/joshmcgrath/Library/Android/sdk/platform-tools
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:~/pear:~/bin
 export EDITOR=vim
-export VISUAL=vim
 export HISTTIMEFORMAT="%F %T "
 export TERM=xterm-256color
+export NVIM_TUI_ENABLE_TRUE_COLOR=1 
 build_prompt () {
 	local reset_color="\[\e[0;0m\]"
 
@@ -103,7 +103,8 @@ git_prompt_text () {
 export PS1=$(build_prompt)
 
 alias du="du -cks"
-alias vi="vim"
+alias vi="nvim"
+alias vim="nvim"
 alias reconf="cd ..; aclocal; autoheader; autoconf; automake -a; ./configure; make clean; make; cd src"
 
 case "$TERM" in
@@ -113,8 +114,6 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-
-export CLICOLOR=1
 
 
 source ~/.alias

@@ -1,4 +1,5 @@
 colorscheme japanesque
+set background=dark
 filetype off                  " required
 syntax on "turn on syntax for all files, decreases performance
 set smartcase
@@ -10,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
 Plug 'xolox/vim-misc'
 Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
@@ -39,6 +41,7 @@ let g:syntastic_mode_map = {
 let NERDTreeShowHidden=1 "show dotfiles by default
 "airline settings
 let g:git_branch = substitute(system('git symbolic-ref HEAD --short'),"^@", "","")
+let g:airline_theme = "luna"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = [] 
@@ -91,6 +94,7 @@ nmap <leader>, :bprev<CR>
 nmap <leader>. :bnext<CR>
 "remaps
 nnoremap <tab> %
+tnoremap <Esc> <C-\><C-n>
 "most important command here
 command W w
 "useful commands
