@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#  . $(brew --prefix)/etc/bash_completion
+#fi
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH:~/pear:~/bin
 export EDITOR=vim
 export HISTTIMEFORMAT="%F %T "
@@ -103,8 +103,8 @@ git_prompt_text () {
 export PS1=$(build_prompt)
 
 alias du="du -cks"
-alias vi="nvim"
-alias vim="nvim"
+alias vi="vim"
+alias vim="vim"
 alias reconf="cd ..; aclocal; autoheader; autoconf; automake -a; ./configure; make clean; make; cd src"
 
 case "$TERM" in
