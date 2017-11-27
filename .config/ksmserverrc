@@ -1,0 +1,27 @@
+[General]
+screenCount=1
+
+[LegacySession: saved at previous logout]
+count=0
+
+[Session: saved at previous logout]
+clientId1=101571a61bd1ae000151127353100000223330001
+clientId2=101571a61bd1ae000151128407500000015920005
+clientId3=101571a61bd1ae000151127353200000223330010
+count=3
+discardCommand1[$e]=rm,$HOME/.config/session/kwin_101571a61bd1ae000151127353100000223330001_1511284191_440441
+program1=kwin_x11
+program2=pulseaudio
+program3=/usr/bin/korgac
+restartCommand1=kwin_x11,-session,101571a61bd1ae000151127353100000223330001_1511284191_440441
+restartCommand2=
+restartCommand3=/usr/bin/korgac,-session,101571a61bd1ae000151127353200000223330010_1511284191_418515
+restartStyleHint1=0
+restartStyleHint2=0
+restartStyleHint3=0
+userId1=josh
+userId2=josh
+userId3=josh
+wasWm1=true
+wasWm2=false
+wasWm3=false

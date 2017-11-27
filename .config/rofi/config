@@ -1,0 +1,5 @@
+#include "/home/josh/.config/rofi/themes/"
+rofi.theme: /home/josh/android_notification.rasi
+rofi.fullscreen: true
+rofi.font: RobotoMono 30
+rofi.opactiy: 10

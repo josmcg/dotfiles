@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="65px" height="65px" viewBox="0 0 65 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4 (15575) - http://www.bohemiancoding.com/sketch -->
+    <title>jobs-purple-square</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="JOB-POPUP" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Helpers" sketch:type="MSLayerGroup" transform="translate(-1448.000000, -410.000000)">
+            <g id="icons" transform="translate(54.000000, 340.000000)" sketch:type="MSShapeGroup">
+                <g id="jobs-purple-square" transform="translate(1394.000000, 70.000000)">
+                    <rect id="Rectangle-13" fill="#926BE9" x="0" y="0" width="65" height="65"></rect>
+                    <g id="suitcase" transform="translate(15.000000, 15.000000)" fill="#FFFFFF">
+                        <path d="M32.4,6.12 L30.6,6.12 L30.6,33.32 L32.4,33.32 C34.38,33.32 36,31.688 36,29.6933333 L36,9.74666667 C36,7.752 34.38,6.12 32.4,6.12 L32.4,6.12 Z M0,9.74666667 L0,29.6933333 C0,31.688 1.62,33.32 3.6,33.32 L5.4,33.32 L5.4,6.12 L3.6,6.12 C1.62,6.12 4.99600361e-16,7.752 4.99600361e-16,9.74666667 L0,9.74666667 Z M24.12,2.32446667 C22.89375,1.74986667 20.937375,0.68 18,0.68 C15.062625,0.68 13.10625,1.74986667 11.88,2.32446667 L11.88,6.12 L7.92,6.12 L7.92,33.32 L28.08,33.32 L28.08,6.12 L24.12,6.12 L24.12,2.32446667 L24.12,2.32446667 Z M21.96,6.12 L14.04,6.12 L14.04,3.6992 C14.999625,3.28213333 16.376625,2.856 18,2.856 C19.623375,2.856 20.99925,3.27986667 21.96,3.69693333 L21.96,6.12 L21.96,6.12 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

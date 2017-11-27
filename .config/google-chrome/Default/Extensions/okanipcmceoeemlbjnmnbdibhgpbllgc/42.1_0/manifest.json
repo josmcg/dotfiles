@@ -1,0 +1,16 @@
+{
+   "default_locale": "en",
+   "description": "__MSG_qs_description__",
+   "icons": {
+      "128": "images/icon128x128.png",
+      "16": "images/icon16x16.png",
+      "19": "images/icon19x19.png",
+      "32": "images/icon32x32.png",
+      "48": "images/icon48x48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCi4GP4r1JFcIaaYWTKGPHjPV7OXP8n7d3JEYlGW+eRz9b1cnLLUqFNkEdrvuhId0MlQi40HT8NC+W2vcqpk2aItSgAdKhkF0X0Ce1M849nDlcscQGQ0UxINJLvF2jQ6PM/Q7PdmRIqK9nwadTB3uJFNoZaFj8JvM88TJwX0cSQWQIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_qs_name__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "42.1"
+}
