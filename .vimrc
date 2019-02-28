@@ -13,6 +13,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug '~/.vim/proselint', {'for' : 'markdown'}
 call plug#end()
 augroup default
