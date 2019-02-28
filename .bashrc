@@ -2,7 +2,7 @@
 #if [ -f $(brew --prefix)/etc/bash_completion ]; then
 #  . $(brew --prefix)/etc/bash_completion
 #fi
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:~/pear:~/bin
+export PATH=~/anaconda3/bin:/usr/local/bin:/usr/local/sbin:$PATH:~/bin
 export EDITOR=vim
 export HISTTIMEFORMAT="%F %T "
 export TERM=xterm-256color
@@ -115,5 +115,8 @@ xterm*|rxvt*)
     ;;
 esac
 
-
-source ~/.alias
+powerline-daemon -q
+export POWERLINE_BASH_CONTINUATION=1
+export POWERLINE_BASH_SELECT=1
+source ~/anaconda3/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+alias vim=/Applications/MacVim.app/Contents/bin/vim

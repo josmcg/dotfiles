@@ -17,7 +17,7 @@ def collect_files(path):
     :return: [file_path_1, file_path_2, ... file_path_n]
     """
     flat = []
-    for root, dirs, files in walk(path):
+    for root, _, files in walk(path):
         if ".git" in root:
             continue
         for file in files:
@@ -26,6 +26,9 @@ def collect_files(path):
 
 
 def uninstall():
+    """
+    entry point
+    """
     home = os.getenv("HOME")
     here = "."
     files = collect_files(here)
@@ -33,7 +36,7 @@ def uninstall():
         file = list(file)
         file[0] = home
         file = "".join(file)
-        if isfile(file) and not (file in DONT_REMOVE):
+        if isfile(file) and file not in DONT_REMOVE:
             print(f"deleting:{file}")
             remove(file)
 

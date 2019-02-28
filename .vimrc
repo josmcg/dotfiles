@@ -10,15 +10,18 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
 Plug 'xolox/vim-misc'
 Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug '~/.vim/proselint', {'for' : 'markdown'}
 call plug#end()
 augroup default
 	autocmd!
 augroup END
+set pythonthreehome=~/anaconda3/
+set pythonhome=~/anaconda3/
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 filetype plugin indent on
 set laststatus=2
@@ -38,44 +41,6 @@ let g:syntastic_mode_map = {
 			\"active_filetypes":["python","markdown","javacript"],
 			\"passive_filetypes":[]}
 let NERDTreeShowHidden=1 "show dotfiles by default
-"airline settings
-let g:git_branch = substitute(system('git symbolic-ref HEAD --short'),"^@", "","")
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_extensions = [] 
-"function! AirlineInit(...)
-"	let w:airline_section_b = '%f'
-"	"let w:airline_section_c = g:git_branch
-"	let g:airline_section_d = ''
-"endfunction
-"call airline#add_statusline_func('AirlineInit')
-
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
 
 let mapleader = ' '
 nmap <leader>f <C-w>w
