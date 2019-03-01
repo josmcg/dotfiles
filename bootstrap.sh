@@ -26,6 +26,16 @@ function doIt() {
 	vim +PlugInstall +qall
 }
 
+
+function miniconda(){
+	wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+	chmod +x miniconda.sh
+	bash miniconda.sh -b -p ~/anaconda3
+	rm miniconda.sh
+	echo "make sure to run a pip install "
+}
+
+
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
 	doIt
 else
@@ -36,6 +46,13 @@ else
 	fi
 fi
 unset doIt
-
+if [ ! -d  "~/anaconda3"]; then
+	read -p "anaconda is not installed, would you like to install miniconda (for linux only)? (y/n)" -n 1
+	echo
+	if [[ $REPLY =~ ^[Yy]$ ]]; then 
+		miniconda
+	fi
+fi
+unset miniconda
 source ~/.bash_profile
 source ~/.bashrc
