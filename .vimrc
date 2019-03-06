@@ -3,6 +3,7 @@ filetype off                  " required
 syntax on "turn on syntax for all files, decreases performance
 set smartcase
 "I can't do tons of indentationn
+set expandtab
 set tabstop=2
 set shiftwidth=2
 inoremap <BS> <Left><Del>
