@@ -46,7 +46,7 @@ else
 	fi
 fi
 unset doIt
-if [ ! -d  "~/anaconda3"]; then
+if [ ! -d  "~/anaconda3" ]; then
 	read -p "anaconda is not installed, would you like to install miniconda (for linux only)? (y/n)" -n 1
 	echo
 	if [[ $REPLY =~ ^[Yy]$ ]]; then 

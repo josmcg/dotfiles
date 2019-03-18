@@ -4,31 +4,27 @@ syntax on "turn on syntax for all files, decreases performance
 set smartcase
 "I can't do tons of indentationn
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 inoremap <BS> <Left><Del>
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/syntastic'
 Plug 'xolox/vim-misc'
+Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 augroup default
 	autocmd!
 augroup END
-set pythonthreehome=~/anaconda3/
-set pythonhome=~/anaconda3/
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-
-filetype plugin indent on
 set laststatus=2
 set number
 set cursorline
 set incsearch
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
