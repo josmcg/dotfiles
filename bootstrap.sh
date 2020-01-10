@@ -54,7 +54,7 @@ if [ ! -d  "~/anaconda3" ]; then
 	fi
 fi
 unset miniconda
-if [ ! -d  "~/oh-my-zsh" ]; then
+if [ ! -d  "~/.oh-my-zsh" ]; then
 	read -p "oh-my-zsh is not installed, would you like to install it? (y/n)" -n 1
 	echo
 	if [[ $REPLY =~ ^[Yy]$ ]]; then 
